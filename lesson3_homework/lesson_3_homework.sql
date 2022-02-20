@@ -32,13 +32,13 @@ from ships
 group by class
 
 
-
-select distinct class
-from ships
-where class not in (
-	select distinct class
-	from ships
-	where class = name) 
+--
+--select distinct class
+--from ships
+--where class not in (
+--	select distinct class
+--	from ships
+--	where class = name) 
 
 
 
