@@ -15,16 +15,10 @@ where rnk <= 3
 
 select member_name, status, sum(unit_price * amount) as costs
 from FamilyMembers
-full join Payments on payments.family_member = FamilyMembers.member_id
-group by member_name, status
-
-
-select member_name, status, sum(amount * unit_price) as costs
-from FamilyMembers
-join Payments
-on FamilyMembers.member_id = Payments.family_member
+left join Payments on payments.family_member = FamilyMembers.member_id
 where YEAR(date) = 2005
 group by member_name, status
+
 
 --task3  (lesson8)
 -- https://sql-academy.org/ru/trainer/tasks/13
